@@ -27,14 +27,14 @@ body {
 main {
   flex: 1;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1480px;           /* Slightly wider but still controlled */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding-top: clamp(30px, 7vh, 80px);
   padding-bottom: clamp(15px, 3vh, 30px);
-  gap: clamp(20px, 4vh, 45px); /* Kompakterer Gesamtabstand */
+  gap: clamp(20px, 4vh, 45px);
 }
 
 /* Clock Container */
@@ -47,7 +47,7 @@ main {
 }
 
 #clock {
-  font-size: clamp(4rem, 12vw, 9.5rem); /* Verkleinert von max 13rem */
+  font-size: clamp(3.8rem, 11vw, 9.2rem);
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -56,7 +56,7 @@ main {
 }
 
 #date {
-  font-size: clamp(1.3rem, 3.5vw, 2.0rem); /* Verkleinert von max 2.8rem */
+  font-size: clamp(1.25rem, 3.4vw, 1.95rem);
   font-weight: 300;
   opacity: 0;
   animation: slideInLeft 0.8s ease 0.5s forwards;
@@ -64,7 +64,7 @@ main {
 }
 
 #greeting {
-  font-size: clamp(1.4rem, 4.2vw, 2.3rem); /* Verkleinert von max 3.2rem */
+  font-size: clamp(1.35rem, 4vw, 2.25rem);
   font-weight: 500;
   opacity: 0;
   animation: slideInLeft 0.9s ease 0.8s forwards;
@@ -74,7 +74,7 @@ main {
 /* Weather */
 #weather {
   display: flex;
-  gap: 14px;
+  gap: clamp(12px, 2.5vw, 18px);
   align-items: baseline;
   justify-content: center;
   margin-top: 18px;
@@ -82,18 +82,18 @@ main {
 }
 
 #location {
-  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  font-size: clamp(1.25rem, 3.4vw, 1.85rem);
   font-weight: 300;
   opacity: 0.7;
 }
 
 #temperature {
-  font-size: clamp(1.4rem, 3.8vw, 2.1rem);
+  font-size: clamp(1.35rem, 3.7vw, 2.05rem);
   font-weight: 200;
 }
 
 #feels-like {
-  font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
   font-weight: 300;
   opacity: 0.6;
 }
@@ -105,7 +105,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(20px, 4vh, 40px); /* Engerer Abstand unten */
+  gap: clamp(24px, 5vh, 42px);
   width: 100%;
 }
 
@@ -115,20 +115,20 @@ form {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 12px;
 }
 
 #search {
-  width: min(800px, 88vw); /* Schmalere maximale Breite von 800px */
+  width: min(820px, 92vw);           /* Better balance */
   max-width: 100%;
-  padding: 14px 24px; /* Flacheres Eingabefeld */
+  padding: clamp(13px, 1.8vh, 17px) 26px;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.06);
   transition: all 0.3s ease;
   color: white;
   font-family: 'Fredoka', sans-serif;
-  font-size: clamp(1.2rem, 3vw, 1.7rem); /* Kleinere Schriftgröße */
+  font-size: clamp(1.15rem, 2.8vw, 1.65rem);
   text-align: center;
   outline: none;
 }
@@ -144,48 +144,53 @@ form {
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* Shortcuts */
+/* ==================== SHORTCUTS ==================== */
 .shortcuts {
   order: 2;
-  display: flex;
-  gap: clamp(14px, 3vw, 28px); /* Engere Abstände zwischen Icons */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(68px, 9vw, 92px), 1fr));
+  gap: clamp(16px, 3.5vw, 28px);
   justify-content: center;
-  flex-wrap: wrap;
   width: 100%;
-  padding: 0 10px;
+  max-width: 920px;                    /* Prevents too wide spreading on 4K */
+  padding: 0 12px;
 }
 
 .shortcut {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: clamp(6px, 1.2vh, 10px);
+  padding: 8px 6px;
   text-decoration: none;
   color: white;
-  font-size: clamp(0.9rem, 2.2vw, 1.1rem); /* Kleinere Beschriftung */
+  font-size: clamp(0.85rem, 2.1vw, 1.05rem);
   opacity: 0.85;
   transition: all 0.25s ease;
-  min-width: 64px;
 }
 
 .shortcut img {
-  width: 54px; /* Deutlich kompaktere Icons (vorher 78px) */
-  height: 54px;
-  border-radius: 10px;
+  width: clamp(52px, 7.5vw, 78px);     /* Much better scaling */
+  height: clamp(52px, 7.5vw, 78px);
+  border-radius: 12px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .shortcut:hover {
   opacity: 1;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+}
+
+.shortcut:hover img {
+  transform: scale(1.08);
 }
 
 /* Settings Button */
 #settings-btn {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: clamp(12px, 1.8vh, 20px);
+  right: clamp(12px, 1.8vw, 20px);
   z-index: 100;
   border: none;
   border-radius: 14px;
@@ -196,7 +201,7 @@ form {
 }
 
 #settings-btn img {
-  width: 32px; /* Kleinerer Einstellungs-Button */
+  width: 32px;
   height: 32px;
 }
 
@@ -211,24 +216,24 @@ footer {
 }
 
 footer span {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
   font-weight: 300;
   opacity: 0.2;
 }
 
-/* Media Queries für Mobilgeräte */
+/* Mobile optimizations */
 @media (max-width: 480px) {
-  .shortcut {
-    min-width: 58px;
-    padding: 6px 8px;
+  .shortcuts {
+    grid-template-columns: repeat(auto-fit, minmax(62px, 1fr));
+    gap: clamp(14px, 3.5vw, 20px);
   }
 
   .shortcut img {
-    width: 46px;
-    height: 46px;
+    width: clamp(46px, 13vw, 54px);
+    height: clamp(46px, 13vw, 54px);
   }
 
   #search {
-    padding: 12px 18px;
+    padding: 12px 20px;
   }
 }
