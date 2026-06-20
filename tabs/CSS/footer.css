@@ -1,0 +1,7 @@
+footer {
+  position: fixed;
+  bottom: var(--space-4);
+  left: var(--space-6);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

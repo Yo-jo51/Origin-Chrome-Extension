@@ -1,0 +1,35 @@
+/* Clock, Date, Weather */
+
+.clock-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  transform: translateY(-60px);
+}
+
+
+#clock {
+  font-size: var(--font-size-3x1);
+  font-weight: 600;
+  letter-spacing: 6px;
+  transform: translateY(-20px);
+}
+
+#date {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+#greeting {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+#weather {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

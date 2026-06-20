@@ -15,6 +15,6 @@ document.getElementById('save').addEventListener('click', () => {
   }));
 
   chrome.storage.sync.set({ shortcuts }, () => {
-    alert('Gespeichert!');
+    alert('Saved Settings!');
   });
 });

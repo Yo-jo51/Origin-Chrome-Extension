@@ -1,0 +1,22 @@
+#settings-btn {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+#settings-btn:hover {
+  opacity: 1;
+}
+
+#settings-btn img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}

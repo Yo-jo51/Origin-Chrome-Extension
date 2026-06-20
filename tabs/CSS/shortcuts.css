@@ -1,0 +1,28 @@
+.shortcuts {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  transition: background 0.2s, color 0.2s;
+}
+
+.shortcut:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.shortcut img {
+  width: 32px;
+  height: 32px;
+}
