@@ -10,7 +10,7 @@
 
 
 #clock {
-  font-size: var(--font-size-3x1);
+  font-size: clamp(var(--font-size-xl),6rem,var(--font-size-3x1));
   font-weight: 600;
   letter-spacing: 6px;
   transform: translateY(-20px);
