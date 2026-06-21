@@ -10,7 +10,7 @@
 
 
 #clock {
-  font-size: clamp(var(--font-size-xl),6rem,var(--font-size-3x1));
+  font-size: clamp(var(--font-size-x1),6rem,var(--font-size-3x1));
   font-weight: 600;
   letter-spacing: 6px;
   transform: translateY(-20px);
@@ -22,7 +22,7 @@
 }
 
 #greeting {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   color: var(--color-text-muted);
 }
 
@@ -34,9 +34,35 @@
   color: var(--color-text-muted);
 }
 
-@media only screen and (height > 800px) and (width > 1600) {
-  #clock{
-    font-size: 8rem;
-    font-weight: 600;
+ /* --- Average Screen range --- */
+@media (min-width: 1280px) and (max-width: 1599px){
+  #clock {
+    font-size: clamp(var(--font-size-x1), 8rem, 10rem); 
+    letter-spacing: 8px; 
   }
+}
+
+ /* --- Big Screens --- */
+@media (min-width: 1600px){
+
+   #clock {
+    font-size: clamp(var(--font-size-x1), 10rem, 12rem); 
+    letter-spacing: 8px; 
+  }
+
+  #date {
+  font-size: var(--font-size-x1);
+  color: var(--color-text-muted);
+  }
+
+  #greeting {
+  font-size: var(--font-size-x1);
+  color: var(--color-text-muted);
+  }
+
+  #weather {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-md);
+  }
+
 }

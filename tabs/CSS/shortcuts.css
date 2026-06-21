@@ -23,6 +23,32 @@
 }
 
 .shortcut img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+}
+
+ /* --- Average Screen range --- */
+@media (min-width: 1280px) and (max-width: 1599px){
+  .shortcut img {
+  width: 48px;
+  height: 48px;
+}
+}
+
+ /* --- Big Screens --- */
+@media (min-width: 1600px){
+  
+  .shortcut img {
+  width: 56px;
+  height: 56px;
+  }
+  
+  .shortcut {
+    font-size: var(--font-size-md);
+  }
+
+  .shortcuts {
+    gap: var(--space-6)
+  }
+
 }

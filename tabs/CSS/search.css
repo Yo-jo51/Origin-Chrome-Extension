@@ -1,24 +1,18 @@
 form {
   width: 100%;
-  max-width: 560px;
+  max-width: 700px;
   margin: clamp(2px, 1.05vw, 32px) auto;
 }
 
 
 #search {
-  /* 1. FORCE ABSOLUTE POSITIONING */
   position: absolute;
   inset: 0;
   margin: auto;
-
-  /* 2. CHANGE WIDTH FROM 100% TO A FIXED/MAX WIDTH */
-  /* If width is 100%, it cannot sit "in the middle" because it fills the whole space */
   width: 90%; 
-  max-width: 500px; 
-  height: fit-content; /* Allows padding to define the height */
-
-  /* Your original styles */
-  padding: var(--space-3) var(--space-5);
+  max-width: 600px; 
+  height: fit-content;
+  padding: var(--space-4) var(--space-6);
   font-family: var(--font);
   font-size: var(--font-size-md);
   color: var(--color-text);
@@ -36,4 +30,12 @@ form {
 #search:focus {
   border-color: rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Big Screens --- */
+@media (min-width: 1600px) {
+  #search {
+    transform: translateY(40px);
+    max-width: 700px;
+  }
 }
