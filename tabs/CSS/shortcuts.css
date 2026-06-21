@@ -25,6 +25,7 @@
 .shortcut img {
   width: 36px;
   height: 36px;
+  object-fit: contain;
 }
 
  /* --- Average Screen range --- */
@@ -32,6 +33,7 @@
   .shortcut img {
   width: 48px;
   height: 48px;
+  object-fit: contain;
 }
 }
 
@@ -41,6 +43,7 @@
   .shortcut img {
   width: 56px;
   height: 56px;
+  object-fit: contain;
   }
   
   .shortcut {

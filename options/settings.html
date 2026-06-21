@@ -2,43 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="mainsettings.css">
 </head>
+
 <body>
-    <h1>Settings</h1>
 
-    <h2>Edit Shortcuts</h2>
+<div class="page">
 
-  <div>
-        <h3>Shortcut 1</h3>
-        <input type="text" id="name1" placeholder="Name">
-        <input type="url" id="url1" placeholder="https://example.com">
-    </div>
+    <header class="header">
+        <h1>Settings</h1>
+        <p>Manage your configuration and shortcuts</p>
+    </header>
 
-    <div>
-        <h3>Shortcut 2</h3>
-        <input type="text" id="name2" placeholder="Name">
-        <input type="url" id="url2" placeholder="https://example.com">
-    </div>
+    <section class="section">
+        <h2>Shortcuts</h2>
 
-    <div>
-        <h3>Shortcut 3</h3>
-        <input type="text" id="name3" placeholder="Name">
-        <input type="url" id="url3" placeholder="https://example.com">
-    </div>
+        <div class="list">
 
-    <button id="save">Save</button>
+            <div class="item">
+                <label>Shortcut 1</label>
+                <input type="text" id="name1" placeholder="Name">
+                <input type="url" id="url1" placeholder="https://example.com">
+            </div>
 
+            <div class="item">
+                <label>Shortcut 2</label>
+                <input type="text" id="name2" placeholder="Name">
+                <input type="url" id="url2" placeholder="https://example.com">
+            </div>
 
-    <script src="settings.js"></script>
+            <div class="item">
+                <label>Shortcut 3</label>
+                <input type="text" id="name3" placeholder="Name">
+                <input type="url" id="url3" placeholder="https://example.com">
+            </div>
+
+        </div>
+
+        <button id="save">Save</button>
+
+    </section>
+
+</div>
+
+<script src="settings.js"></script>
+
 </body>
 </html>

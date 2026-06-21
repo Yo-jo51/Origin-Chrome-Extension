@@ -112,7 +112,13 @@ chrome.storage.sync.get(['shortcuts'], (result) => {
     if (s && s.url) {
       el.href = s.url;
       el.querySelector('span').textContent = s.name || s.url;
-      el.querySelector('img').src = `https://www.google.com/s2/favicons?domain=${s.url}&sz=32`;
+      
+      // Nutzt Chromes interne, hochauflösende Favicon-API
+      const faviconUrl = new URL(`chrome-extension://${chrome.runtime.id}/_favicon/`);
+      faviconUrl.searchParams.set('pageUrl', s.url);
+      faviconUrl.searchParams.set('size', '128');
+      
+      el.querySelector('img').src = faviconUrl.href;
     }
   });
 });

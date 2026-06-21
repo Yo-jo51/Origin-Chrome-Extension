@@ -11,7 +11,7 @@
 
 #clock {
   font-size: clamp(var(--font-size-x1),6rem,var(--font-size-3x1));
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 6px;
   transform: translateY(-20px);
 }
