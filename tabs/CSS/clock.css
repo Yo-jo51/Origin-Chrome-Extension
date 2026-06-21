@@ -11,8 +11,8 @@
 
 #clock {
   font-size: clamp(var(--font-size-x1),6rem,var(--font-size-3x1));
-  font-weight: 300;
-  letter-spacing: 6px;
+  font-weight: 400;
+  letter-spacing: 2px;
   transform: translateY(-20px);
 }
 
@@ -38,7 +38,7 @@
 @media (min-width: 1280px) and (max-width: 1599px){
   #clock {
     font-size: clamp(var(--font-size-x1), 8rem, 10rem); 
-    letter-spacing: 8px; 
+    letter-spacing: 2px; 
   }
 }
 
@@ -47,7 +47,7 @@
 
    #clock {
     font-size: clamp(var(--font-size-x1), 10rem, 12rem); 
-    letter-spacing: 8px; 
+    letter-spacing: 4px; 
   }
 
   #date {
