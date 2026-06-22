@@ -1,22 +1,17 @@
 #settings-btn {
   position: fixed;
-  top: var(--space-4);
-  right: var(--space-6);
-  background: none;
-  border: none;
+  top: 24px;             
+  right: 36px;            
+  padding: 15px 24px;        
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;   
+  background: transparent;
+  color: #ffffff;        
   cursor: pointer;
-  padding: var(--space-2);
-  border-radius: var(--radius-md);
-  opacity: 0.4;
-  transition: opacity 0.2s;
+  
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 #settings-btn:hover {
-  opacity: 1;
-}
-
-#settings-btn img {
-  width: 40px;
-  height: 40px;
-  display: block;
+  border-color: rgba(255, 255, 255, 0.2);
 }

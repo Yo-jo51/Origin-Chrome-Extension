@@ -1,6 +1,6 @@
 // script.js
 
-//Getting elements from the html
+//constin
 const clockElement = document.getElementById('clock');
 const dateElement = document.getElementById('date');
 const greetingElement = document.getElementById('greeting');
@@ -41,13 +41,13 @@ function updateDate() {
 }
 
 
-// Function to get weather data based on user's location
+// Function to get weather data 
 function getWeather() {
     navigator.geolocation.getCurrentPosition(
         (position) => {
             const { latitude, longitude } = position.coords;
             
-            // Wetter-Daten abrufen
+            // Weather Data API
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,apparent_temperature`;
             
             fetch(url)
@@ -88,7 +88,7 @@ document.getElementById("settings-btn").addEventListener("click", () => {
     window.location.href = "/options/settings.html";
 });
 
-//sound system beim schreiben
+//typing sound
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search');
   const soundURL = chrome.runtime.getURL('Resources/audio/ButtonPres.wav');
@@ -107,25 +107,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 chrome.storage.sync.get(['shortcuts'], (result) => {
   const shortcuts = result.shortcuts || [];
-  document.querySelectorAll('.shortcut').forEach((el, i) => {
-    const s = shortcuts[i];
-    if (s && s.url) {
-      el.href = s.url;
-      el.querySelector('span').textContent = s.name || s.url;
-      
-      // Nutzt Chromes interne, hochauflösende Favicon-API
-      const faviconUrl = new URL(`chrome-extension://${chrome.runtime.id}/_favicon/`);
-      faviconUrl.searchParams.set('pageUrl', s.url);
-      faviconUrl.searchParams.set('size', '128');
-      
-      el.querySelector('img').src = faviconUrl.href;
-    }
+  const container = document.getElementById('shortcuts-container');
+
+  shortcuts.forEach((s) => {
+    if (!s || !s.url) return;
+
+    // Favicon Service
+    const faviconUrl = new URL(`chrome-extension://${chrome.runtime.id}/_favicon/`);
+    faviconUrl.searchParams.set('pageUrl', s.url);
+    faviconUrl.searchParams.set('size', '128');
+
+    // Make the shortcut element
+    const a = document.createElement('a');
+    a.classList.add('shortcut');
+    a.href = s.url;
+    a.target = '_blank'; 
+
+    const img = document.createElement('img');
+    img.src = faviconUrl.href;
+    img.alt = s.name || s.url;
+
+    const span = document.createElement('span');
+    span.textContent = s.name || s.url;
+
+    a.appendChild(img);
+    a.appendChild(span);
+    container.appendChild(a);
   });
 });
 
 updateClock();
 setInterval(updateClock, 1000);
 updateDate();
+//https://is.gd/UeKo1F
 setInterval(updateDate, 1000);
 greeting();
 getWeather();
