@@ -121,7 +121,6 @@ chrome.storage.sync.get(['shortcuts'], (result) => {
     const a = document.createElement('a');
     a.classList.add('shortcut');
     a.href = s.url;
-    a.target = '_blank'; 
 
     const img = document.createElement('img');
     img.src = faviconUrl.href;
