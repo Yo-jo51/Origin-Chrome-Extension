@@ -22,41 +22,35 @@
 </head>
 
 <body>
-    <main>
+<main>
 
-        <!-- Clock & Weather Widget -->
-        <section class="clock-widget">
-            <div id="clock"></div>
-            <div id="date"></div>
-            <div id="greeting"></div>
+  <!-- Oben: Uhr & Wetter -->
+  <div class="top-group">
+    <section class="clock-widget">
+      <div id="clock"></div>
+      <div id="date"></div>
+      <div id="greeting"></div>
+    </section>
 
-            <div id="weather">
-                <div id="location">Loading...</div>
-                <div id="temperature">--°C</div>
-                <div id="feels-like">Feels: --°C</div>
-            </div>
-        </section>
+    <div id="weather">
+      <div id="location">Loading...</div>
+      <div id="temperature">--°C</div>
+      <div id="feels-like">Feels: --°C</div>
+    </div>
+  </div>
 
-  <form action="https://www.google.com/search" method="get">
-    <input
-      type="text"
-      name="q"
-      id="search"
-      placeholder="Search Google..."
-      autocomplete="off"
-    >
-  </form>
+  <!-- Unten: Suche & Shortcuts -->
+  <div class="bottom-group">
+    <form action="https://www.google.com/search" method="get">
+      <input type="text" name="q" id="search" placeholder="Search Google..." autocomplete="off">
+    </form>
 
-<!-- Shortcuts -->
-<div class="shortcuts" id="shortcuts-container">
-  <!-- Javascript control -->
-</div>
+    <div class="shortcuts" id="shortcuts-container"></div>
+  </div>
 
   <button id="settings-btn">Settings</button>
-  
-</div>
 
-    </main>
+</main>
 
     <footer>
         <span>Origin - minimal new tab v1.1</span>

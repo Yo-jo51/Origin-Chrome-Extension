@@ -57,8 +57,9 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-12);
+  gap: var(--space-20);
   padding: var(--space-8);
+  padding-bottom: 180px;
 }
 
 footer {
@@ -75,4 +76,18 @@ footer {
   gap: var(--space-4);
   width: 100%;
   max-width: 600px;
+}
+
+.top-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.bottom-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
 }
