@@ -1,0 +1,57 @@
+.Notebox {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 35vh;
+}
+
+/*Text OVER the notesbox*/
+.Notebox h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px; 
+    margin: 0 0 10px 10px; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.Notebox textarea {
+    font-family: 'Fredoka', sans-serif; 
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff; 
+    width: 100%;
+    height: calc(100% - 30px);
+    box-sizing: border-box;
+    resize: none;
+    padding: 16px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.06); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.Notebox textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+.Notebox textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+}
+
+.Notebox textarea::-webkit-scrollbar {
+    width: 0px;
+}

@@ -117,8 +117,7 @@ chrome.storage.sync.get(['shortcuts'], (result) => {
     faviconUrl.searchParams.set('pageUrl', s.url);
     faviconUrl.searchParams.set('size', '128');
 
-    // Make the shortcut element
-    const a = document.createElement('a');
+ const a = document.createElement('a');
     a.classList.add('shortcut');
     a.href = s.url;
 
@@ -133,7 +132,7 @@ chrome.storage.sync.get(['shortcuts'], (result) => {
     a.appendChild(span);
     container.appendChild(a);
   });
-});
+}); 
 
 updateClock();
 setInterval(updateClock, 1000);
