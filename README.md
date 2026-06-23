@@ -2,6 +2,8 @@ ORIGIN - MINIMAL NEW TAB
 
 A simple and very minimal New Tab extension for your browser.
 
+<img width="3839" height="2123" alt="prewiev" src="https://github.com/user-attachments/assets/f2b31a45-7509-4041-8f05-298fccc3662d" />
+
 INSTALLATION
 
 Follow these steps to load it into your browser manually:
