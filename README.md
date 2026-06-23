@@ -2,6 +2,9 @@ ORIGIN - MINIMAL NEW TAB
 
 A simple and very minimal New Tab extension for your browser.
 
+![Project Preview](Resources\images\preview.png)
+
+
 INSTALLATION
 
 Follow these steps to load it into your browser manually:
