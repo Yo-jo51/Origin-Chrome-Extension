@@ -1,5 +1,3 @@
-// script.js
-
 //constin
 const clockElement = document.getElementById('clock');
 const dateElement = document.getElementById('date');
@@ -134,10 +132,45 @@ chrome.storage.sync.get(['shortcuts'], (result) => {
   });
 }); 
 
+// =========================================================================
+// NEUER CODE: Text speichern & laden (Direkt beim Tippen oder via Button)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const inputField = document.getElementById('myInput'); // ID deiner Textarea oder deines Inputs
+  const saveButton = document.getElementById('saveBtn');   // ID deines Buttons (optional)
+
+  if (inputField) {
+    // 1. Gespeicherten Text beim Laden der Seite abrufen
+    chrome.storage.sync.get(['savedText'], (result) => {
+      if (result.savedText) {
+        inputField.value = result.savedText;
+      }
+    });
+
+    // 2. Variante A: Text automatisch bei JEDER Änderung speichern (super praktisch!)
+    inputField.addEventListener('input', () => {
+      chrome.storage.sync.set({ savedText: inputField.value });
+    });
+  }
+
+  // 3. Variante B: Falls du lieber einen extra "Speichern"-Button nutzt
+  if (saveButton && inputField) {
+    saveButton.addEventListener('click', () => {
+      chrome.storage.sync.set({ savedText: inputField.value }, () => {
+        const statusDiv = document.getElementById('status');
+        if (statusDiv) {
+          statusDiv.textContent = 'Gespeichert!';
+          setTimeout(() => { statusDiv.textContent = ''; }, 2000);
+        }
+      });
+    });
+  }
+});
+// =========================================================================
+
 updateClock();
 setInterval(updateClock, 1000);
 updateDate();
-//https://is.gd/UeKo1F
 setInterval(updateDate, 1000);
 greeting();
 getWeather();
