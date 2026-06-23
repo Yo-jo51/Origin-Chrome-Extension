@@ -24,7 +24,8 @@ form {
 }
 
 #search::placeholder {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
 }
 
 #search:focus {
