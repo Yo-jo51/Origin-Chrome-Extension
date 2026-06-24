@@ -2,6 +2,9 @@
   display: flex;
   gap: var(--space-4);
   justify-content: center;
+  min-height: 56px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .shortcut {

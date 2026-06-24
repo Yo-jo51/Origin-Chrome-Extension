@@ -2,15 +2,14 @@ form {
   width: 100%;
   max-width: 700px;
   margin: clamp(2px, 1.05vw, 32px) auto;
+  display: flex;
+  justify-content: center;
 }
 
-
 #search {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 90%; 
-  max-width: 600px; 
+  display: block;
+  width: 90%;
+  max-width: 600px;
   height: fit-content;
   padding: var(--space-4) var(--space-6);
   font-family: var(--font);
